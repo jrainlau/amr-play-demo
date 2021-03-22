@@ -9,11 +9,12 @@
 <body>
   <button id="play">Play</button>
   <script type="module">
-    import playAMR from './main.js'
+    import { playAmrBlob } from './main.js'
   
     document.querySelector('#play').addEventListener('click', async () => {
       const url = '/music.amr'
-      playAMR(url)
+      const blob = await fetch(url).then(res => res.blob())
+      playAmrBlob(blob)
     })
   </script>
 </body>

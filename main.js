@@ -53,9 +53,9 @@ async function playAmrBlob(blob) {
   playAmrArray(data)
 }
 
-async function playAmr(url) {
+async function playAmrUrl(url) {
   const blob = await fetchBlob(url)
   playAmrBlob(blob)
 }
 
-export default playAmr
+export { playAmrBlob, playAmrUrl }
